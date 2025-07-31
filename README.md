@@ -1,34 +1,33 @@
 # LangChain-Powered Multi-Cloud Threat Detection Agent
 
-This project implements an **agentic AI system** for detecting and mitigating security threats across **AWS** and **Azure** environments.  
-It combines **LangChain** + HuggingFace LLMs with **Elasticsearch** and **Kibana** to provide automated detection, response, and visualization.
+This project combines a **LangChain-powered AI Agent** with a **Multi-Cloud Threat Detection System for AWS and Azure**.  
+It provides real-time log analysis, decision-making, and automated responses for security events from AWS and Azure environments.  
+All components are designed to run locally on Kali Linux using Elasticsearch, Logstash, and Kibana (ELK Stack).
 
 ---
 
-## Features
-- Pulls multi-cloud logs from **Elasticsearch**
-- Analyzes logs with **LangChain** + HuggingFace AI
-- Generates **SOC-style explanations** for each threat
-- Executes automated responses:
-  - `block_ip`
-  - `isolate_vm`
-  - `alert_only`
-- Logs decisions back into Elasticsearch
-- Provides a Kibana dashboard for monitoring agent activity
+## 🚀 Features
+
+- **AI Agent (LangChain + HuggingFace)**
+  - Analyzes security logs from AWS and Azure
+  - Generates human-readable explanations for detected threats
+  - Takes automated response actions (`block_ip`, `alert_only`, etc.)
+  - Logs every decision back into Elasticsearch for audit and visualization
+
+- **Multi-Cloud Threat Detection**
+  - Centralized log ingestion from AWS GuardDuty & Azure Defender
+  - Custom Logstash pipelines for log normalization
+  - Pre-built Kibana dashboards for monitoring
+  - Supports continuous monitoring & alerting
+
+- **Visualization**
+  - Kibana dashboards for:
+    - 📊 Timeline of Alert Events
+    - 🔎 Top Event Types & Affected Users
+    - 🛡️ Severity Trends Over Time
+    - 🚦 Agent Decisions (from AI analysis)
 
 ---
 
-## Example Agent Workflow
-- Detects a **SSHBruteForce** attempt → Blocks attacker IP
-- Detects a **MaliciousDomainRequest** → Raises alert only
-- Detects **BlobAccessDenied** or **Unauthorized S3 Access** → Blocks attacker
-
----
-
-## Setup
-
-### 1. Clone Repository
-```bash
-git clone https://github.com/YOUR-USERNAME/langchain-multicloud-threat-agent.git
-cd langchain-multicloud-threat-agent
+## 📂 Project Structure
 
