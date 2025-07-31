@@ -1,0 +1,7 @@
+langchain
+langchain-community
+transformers
+torch
+elasticsearch
+python-dotenv
+
