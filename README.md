@@ -62,54 +62,6 @@ multi-cloud-threat-detection/
 └── report/
     └── Multicloud_Threat_Detection_Report.pdf # Final project report
 
-## 🏗 System Architecture Diagram
 
-```mermaid
-flowchart TD
-    subgraph AWS[AWS Cloud]
-        GD[GuardDuty Logs]
-        CT[CloudTrail Logs]
-        S3[S3 Storage]
-    end
-
-    subgraph Azure[Azure Cloud]
-        DEF[Defender for Cloud Alerts]
-        BLOB[Blob Storage Logs]
-        MON[Azure Monitor]
-    end
-
-    subgraph Ingestion[Ingestion Layer - Kali Linux VM]
-        AWSCLI[fetch_aws_logs.sh<br>(AWS CLI)]
-        AZCOPY[fetch_azure_logs.sh<br>(Azure CLI / AzCopy)]
-    end
-
-    subgraph Processing[Processing Layer - Logstash]
-        CONF[multicloud-logs.conf<br>Parsing & Normalization]
-        TAGS[Tagging Severity & Events]
-    end
-
-    subgraph Storage[Indexing & Storage - Elasticsearch]
-        ES[Elasticsearch<br>multicloud-logs-*]
-    end
-
-    subgraph Visualization[Visualization - Kibana]
-        DASH[Custom Dashboards<br>Timeline, Top Events, Severity Trends]
-    end
-
-    subgraph Agent[AI Agent - LangChain + HuggingFace]
-        FETCH[Fetch Logs via Elasticsearch]
-        ANALYZE[Analyze Threats<br>LLM Processing]
-        ACTION[Execute Actions<br>(actions.sh / iptables)]
-        DECISION[Log Decisions Back<br>to Elasticsearch]
-    end
-
-    AWS -->|Logs| Ingestion
-    Azure -->|Logs| Ingestion
-    Ingestion -->|Parsed Logs| Processing
-    Processing -->|Normalized Data| Storage
-    Storage --> Visualization
-    Storage --> Agent
-    Agent -->|Mitigation| ACTION
-    Agent -->|Log Decisions| Storage
 
 
