@@ -1,0 +1,2 @@
+{"attributes":{"allowHidden":false,"fieldAttrs":"{}","fieldFormatMap":"{}","fields":"[]","name":"Agent Decision","runtimeFieldMap":"{}","sourceFilters":"[]","timeFieldName":"","title":"agent-decisions"},"coreMigrationVersion":"8.8.0","created_at":"2025-07-30T04:51:01.393Z","id":"c63038ba-bc3e-4c46-9656-504faf4bb607","managed":false,"references":[],"type":"index-pattern","typeMigrationVersion":"8.0.0","updated_at":"2025-07-30T04:51:01.393Z","version":"WzI1Niw1XQ=="}
+{"excludedObjects":[],"excludedObjectsCount":0,"exportedCount":1,"missingRefCount":0,"missingReferences":[]}

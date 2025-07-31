@@ -1,0 +1,14 @@
+# Ignore system/user files
+../*
+!agent.py
+!tools/
+!requirements.txt
+!README.md
+
+# Ignore common Linux/desktop files
+*.log
+*.tmp
+*.swp
+*.DS_Store
+*.cache
+
