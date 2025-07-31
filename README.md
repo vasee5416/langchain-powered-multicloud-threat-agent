@@ -30,4 +30,30 @@ All components are designed to run locally on Kali Linux using Elasticsearch, Lo
 ---
 
 ## 📂 Project Structure
+multi-cloud-threat-detection/
+│
+├── README.md
+├── LICENSE
+├── .gitignore
+│
+├── architecture/
+│   └── architecture_diagram.png              # Overall architecture diagram (AWS + Azure → Logstash → Elasticsearch → Kibana)
+│
+├── logstash/
+│   ├── multicloud-logs.conf                  # Logstash pipeline config (parsing + filters)
+│
+├── scripts/
+│   ├── fetch_aws_logs.sh                     # Bash script to pull AWS GuardDuty / CloudTrail logs
+│   ├── fetch_azure_logs.sh                   # Bash script to pull Azure Defender / Blob logs
+│
+├── logs/
+│   ├── aws_guardduty_sample.json             # Sample AWS GuardDuty logs
+│   ├── azure_defender_sample.json            # Sample Azure Defender logs
+│
+├── dashboards/
+│   ├── kibana_dashboard_export.ndjson        # Exported Kibana dashboard
+│   └── screenshots/
+│       ├── timeline.png                      # Timeline of threat events
+│       └── top-alerts.png                    # Top alert categories visualization
+
 
