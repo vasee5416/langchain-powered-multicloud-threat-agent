@@ -30,30 +30,36 @@ All components are designed to run locally on Kali Linux using Elasticsearch, Lo
 ---
 
 ## 📂 Project Structure
+
+```plaintext
 multi-cloud-threat-detection/
 │
-├── README.md
-├── LICENSE
-├── .gitignore
+├── README.md                      # Documentation for the detection project
+├── LICENSE                        # Project license (MIT)
+├── .gitignore                     # Files/folders ignored by Git
 │
 ├── architecture/
-│   └── architecture_diagram.png              # Overall architecture diagram (AWS + Azure → Logstash → Elasticsearch → Kibana)
+│   └── architecture_diagram.png   # Overall architecture diagram 
+│                                  # (AWS + Azure → Logstash → Elasticsearch → Kibana)
 │
 ├── logstash/
-│   ├── multicloud-logs.conf                  # Logstash pipeline config (parsing + filters)
+│   ├── multicloud-logs.conf       # Logstash pipeline config (filters & parsing rules)
 │
 ├── scripts/
-│   ├── fetch_aws_logs.sh                     # Bash script to pull AWS GuardDuty / CloudTrail logs
-│   ├── fetch_azure_logs.sh                   # Bash script to pull Azure Defender / Blob logs
+│   ├── fetch_aws_logs.sh          # Bash script to pull AWS GuardDuty / CloudTrail logs
+│   ├── fetch_azure_logs.sh        # Bash script to pull Azure Defender / Blob logs
 │
 ├── logs/
-│   ├── aws_guardduty_sample.json             # Sample AWS GuardDuty logs
-│   ├── azure_defender_sample.json            # Sample Azure Defender logs
+│   ├── aws_guardduty_sample.json  # Sample AWS GuardDuty logs
+│   ├── azure_defender_sample.json # Sample Azure Defender logs
 │
 ├── dashboards/
-│   ├── kibana_dashboard_export.ndjson        # Exported Kibana dashboard
+│   ├── kibana_dashboard_export.ndjson # Exported Kibana dashboard for quick import
 │   └── screenshots/
-│       ├── timeline.png                      # Timeline of threat events
-│       └── top-alerts.png                    # Top alert categories visualization
+│       ├── timeline.png           # Timeline of threat events
+│       └── top-alerts.png         # Top alert categories visualization
+│
+└── report/
+    └── Multicloud_Threat_Detection_Report.pdf # Final project report
 
 
