@@ -1,0 +1,12 @@
+# Deployment Note
+
+This entire project can be deployed end-to-end on **AWS using Infrastructure as Code (IaC)**.  
+The Terraform stack provisions:
+
+- **AWS GuardDuty** → enabled with S3/KMS export of findings  
+- **EventBridge + Lambda** → routes findings in real time and invokes **AWS Bedrock** for AI-driven triage  
+- **S3 (logs + knowledge base)** → durable storage for raw and summarized findings  
+- **SageMaker Notebook** → interactive environment for detection research, model prototyping, and integration with Bedrock  
+- All resources are tagged and encrypted, and follow AWS best practices for access and security
+
+With a single `terraform apply`, the project spins up a ready-to-use multi-cloud SOC environment, fully managed inside AWS. This ensures **repeatability, scalability, and cost control**, while making it easy to extend (e.g., add Bedrock Knowledge Bases or integrate Azure logs).
